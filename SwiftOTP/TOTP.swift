@@ -29,7 +29,7 @@ public struct TOTP {
 	
 	//Generate from a Date object
 	public func generate(time: Date) -> String {
-		let secondsPast1970 = Int(floor(time.timeIntervalSince1970))
+		let secondsPast1970 = Int64(floor(time.timeIntervalSince1970))
 		return generate(secondsPast1970: secondsPast1970)
 		
     }
