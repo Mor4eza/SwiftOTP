@@ -35,8 +35,8 @@ public struct TOTP {
     }
 	
 	//Generate from Unix Epoch
-	public func generate(secondsPast1970: Int) -> String {
-		let counterValue = Int(floor(Double(secondsPast1970) / Double(timeInterval)))
+	public func generate(secondsPast1970: Int64) -> String {
+		let counterValue = Int64(floor(Double(secondsPast1970) / Double(timeInterval)))
 		return GenerateOTP(secret: secret, algorithm: algorithm, counter: UInt64(counterValue), digits: digits)
 	}
     
